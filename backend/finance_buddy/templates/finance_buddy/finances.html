@@ -1,0 +1,13 @@
+{% extends 'finance_buddy/base.html' %}
+
+{% block content %}
+<h2>My Finances</h2>
+<p>Expenses based on categories in this month:</p>
+<ul>
+    <li>Healthcare: -243,92$</li>
+    <li>Groceries: -134,71$</li>
+    <li>Entertainment: -97,55$</li>
+    <li>Others: -368,15$</li>
+</ul>
+<a href="{% url 'dashboard' %}">Back to Dashboard</a>
+{% endblock %}

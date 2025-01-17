@@ -1,0 +1,18 @@
+{% extends 'finance_buddy/base.html' %}
+
+{% block content %}
+<h2>Dashboard</h2>
+<p>Last month revenues and expenses</p>
+<ul>
+    <li>Groceries at Lidl: -60$</li>
+    <li>Electricity bill: -60$</li>
+    <li>Doctor visit: -45$</li>
+    <li>Spotify subscription: -7$</li>
+    <li>Gym membership: -20$</li>
+    <li>Monthly salary: +1500$</li>
+    <li>Clothing at H&M: -40$</li>
+    <li>Monthly public transportation ticket: -15$</li>
+    <li>Udemy subscription: -10$</li>
+</ul>
+<a href="{% url 'finances' %}">Add new revenue or expense</a>
+{% endblock %}

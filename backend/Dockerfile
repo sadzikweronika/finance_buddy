@@ -1,4 +1,3 @@
-# Używamy obrazu Pythona
 FROM python:3.10-slim
 
 # Ustawienie katalogu roboczego

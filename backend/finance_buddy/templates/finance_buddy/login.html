@@ -1,0 +1,15 @@
+{% extends 'finance_buddy/base.html' %}
+
+{% block content %}
+<h2>Hello again!</h2>
+<form method="post" action="/login/">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <button type="submit">Login</button>
+</form>
+<p>Don’t have an account yet? <a href="/signup/">Sign Up</a></p>
+<p><a href="/forgot-password/">Forgot password?</a></p>
+{% endblock %}
