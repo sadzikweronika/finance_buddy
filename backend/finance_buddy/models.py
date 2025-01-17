@@ -25,3 +25,7 @@ class Expense(models.Model):
 
     def __str__(self):
         return f"{self.name} ({self.type} - {self.amount})"
+    
+    class Meta:
+        db_table = "expenses"
+
