@@ -9,7 +9,9 @@ services:
     networks:
       - pg-network
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+
 
   db:
     image: postgres:latest
@@ -21,6 +23,11 @@ services:
       - "5433:5432"
     networks:
       - pg-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d finance_buddy"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   pgadmin:
     image: dpage/pgadmin4:latest
