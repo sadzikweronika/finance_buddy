@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import example_api, login, finances, dashboard, expense_detail, user_profile
+from .views import example_api, login, finances, dashboard, expense_detail, user_profile, ExpenseListCreateAPIView, ExpenseDetailAPIView
 
 
 urlpatterns = [
@@ -27,4 +27,6 @@ urlpatterns = [
     path('dashboard/', dashboard, name='dashboard'),
     path('expense/<uuid:expense_id>/', expense_detail, name='expense_detail'),
     path('user/<uuid:user_id>/', user_profile, name='user_profile'),
+    path('api/expenses/', ExpenseListCreateAPIView.as_view(), name='expense-list'),
+    path('api/expenses/<int:pk>/', ExpenseDetailAPIView.as_view(), name='expense-detail'),
 ]
