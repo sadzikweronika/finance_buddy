@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django_extensions",
     "finance_buddy",
     'rest_framework',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -82,8 +83,8 @@ DATABASES = {
         'NAME': 'finance_buddy',
         'USER': 'admin',
         'PASSWORD': 'admin',
-        'HOST': 'db',
-        'PORT': '5432',
+        'HOST': 'localhost',
+        'PORT': '5433',
     }
 }
 
