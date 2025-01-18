@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 class Expense(models.Model):
     name = models.CharField(max_length=255, null=False)
@@ -28,4 +29,9 @@ class Expense(models.Model):
     
     class Meta:
         db_table = "expenses"
+
+
+class User(AbstractUser):
+    email = models.EmailField(unique=True)
+    REQUIRED_FIELDS = ['email']
 
