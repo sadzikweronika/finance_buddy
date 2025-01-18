@@ -86,8 +86,8 @@ DATABASES = {
         'NAME': 'finance_buddy',
         'USER': 'admin',
         'PASSWORD': 'admin',
-        'HOST': 'localhost',
-        'PORT': '5433',
+        'HOST': 'db',
+        'PORT': '5432',
     }
 }
 

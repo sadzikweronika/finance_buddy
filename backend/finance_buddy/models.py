@@ -41,3 +41,15 @@ class User(AbstractUser):
     email = models.EmailField(unique=True)
     REQUIRED_FIELDS = ['email']
 
+    # Rozwiązanie konfliktu poprzez nadanie related_name
+    groups = models.ManyToManyField(
+        'auth.Group',
+        related_name='custom_user_groups',  # Zmień nazwę relacji, aby uniknąć konfliktu
+        blank=True
+    )
+    user_permissions = models.ManyToManyField(
+        'auth.Permission',
+        related_name='custom_user_permissions',  # Zmień nazwę relacji, aby uniknąć konfliktu
+        blank=True
+    )
+
